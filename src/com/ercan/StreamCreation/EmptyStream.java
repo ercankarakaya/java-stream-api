@@ -36,6 +36,7 @@ public class EmptyStream {
     public static Stream<String> streamOf(List<String> list) {
         return list == null || list.isEmpty() ? Stream.empty() : list.stream();
     }
+    
     public static Stream<String> getTestStream(boolean condition){
         return condition ? Stream.of("Test1","Test2") : Stream.empty();
     }

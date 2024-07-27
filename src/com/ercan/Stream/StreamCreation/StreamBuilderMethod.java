@@ -1,4 +1,4 @@
-package com.ercan.StreamCreation;
+package com.ercan.Stream.StreamCreation;
 
 import java.util.ArrayList;
 import java.util.List;

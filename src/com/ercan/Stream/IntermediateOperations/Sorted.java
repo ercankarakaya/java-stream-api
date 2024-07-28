@@ -69,7 +69,7 @@ public class Sorted {
             List<String> sortedLines = stream.sorted()
                     .collect(Collectors.toList());
 
-            sortedLines.forEach(System.out::println);
+            System.out.println(sortedLines);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -2,7 +2,7 @@ package com.ercan.model;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person> {
     String name;
     int age;
 
@@ -11,8 +11,17 @@ public class Person {
         this.age = age;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int getAge() {
         return age;
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return Integer.compare(this.age, o.age);
     }
 
     @Override
@@ -46,4 +55,5 @@ public class Person {
     public String toString() {
         return name + " (" + age + ")";
     }
+
 }

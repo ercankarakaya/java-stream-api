@@ -10,7 +10,7 @@ public class ForEach {
         System.out.println(names); // [Bob, Alice, Edward, David, Charlie]
         //names.forEach(System.out::println);
 
-        
+
 
     }
 }

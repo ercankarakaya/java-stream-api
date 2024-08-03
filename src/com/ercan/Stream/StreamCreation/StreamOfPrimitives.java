@@ -1,9 +1,7 @@
 package com.ercan.Stream.StreamCreation;
 
 import java.util.Random;
-import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
+import java.util.stream.*;
 
 public class StreamOfPrimitives {
     public static void main(String[] args) {
@@ -19,10 +17,13 @@ public class StreamOfPrimitives {
         int[] numbers = {1, 2, 3, 4, 5};
         IntStream.of(numbers).map(n -> n * n).forEach(System.out::println);
 
+        Stream<Integer> boxedStream = IntStream.of(1, 2, 3, 4, 5).boxed(); // boxed ; Used to convert to Wrapper classes (Integer, Long, Double).
+        System.out.println(boxedStream.toList()); // [1, 2, 3, 4, 5]
+
         LongStream longStream = LongStream.rangeClosed(1, 4);
         longStream.forEach(System.out::println); // 1 2 3 4
 
-        LongStream randomLongs = (new Random()).longs(10,0,100);
+        LongStream randomLongs = (new Random()).longs(10, 0, 100);
         randomLongs.forEach(System.out::println);
 
         DoubleStream doubleStream = (new Random()).doubles(3);

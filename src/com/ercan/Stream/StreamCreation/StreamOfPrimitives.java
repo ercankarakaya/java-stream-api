@@ -1,5 +1,7 @@
 package com.ercan.Stream.StreamCreation;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
 import java.util.Random;
 import java.util.stream.*;
 
@@ -19,6 +21,11 @@ public class StreamOfPrimitives {
 
         Stream<Integer> boxedStream = IntStream.of(1, 2, 3, 4, 5).boxed(); // boxed ; Used to convert to Wrapper classes (Integer, Long, Double).
         System.out.println(boxedStream.toList()); // [1, 2, 3, 4, 5]
+
+        OptionalInt maxNumber = Arrays.asList(5, 3, 9, 2, 10, 7).stream().
+                mapToInt(Integer::intValue)  // convert to IntStream
+                .max();
+        System.out.println(maxNumber); // 10
 
         LongStream longStream = LongStream.rangeClosed(1, 4);
         longStream.forEach(System.out::println); // 1 2 3 4

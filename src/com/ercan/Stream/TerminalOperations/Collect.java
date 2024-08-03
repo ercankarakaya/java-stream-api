@@ -69,5 +69,12 @@ public class Collect {
         System.out.println(summaryStatistics); // IntSummaryStatistics{count=5, sum=15, min=1, average=3,000000, max=5}
 
 
+        // Finding the largest number
+        Integer maxNumber = Arrays.asList(5,3,9,2,10,7).stream()
+                .collect(Collectors.maxBy(Comparator.naturalOrder()))
+                .orElse(null);
+
+        System.out.println(maxNumber);
+
     }
 }
